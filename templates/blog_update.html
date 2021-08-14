@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block start%}
+{% load static %}
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+    <main class="blog-form">
+        <div class="container">
+            
+            <form method="POST"  class="form_blog" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <label >Enter Blog Title </label>
+                        <input type="text" class="form-control" placeholder="Enter-title" name="title">
+                    </div>
+                    <div class="col-md-12">
+                        {{form.media}}
+                        {{form.as_p}}
+                    </div>
+                    <div class="col-md-12">
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Blog</button>
+                <button class="btn btn-primary"><a href="{% url 'account_view' %}" >View Your Blog</a></button>
+            </form>
+            
+        </div>
+    </main>
+    
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+{% endblock %}
+    

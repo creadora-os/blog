@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block start%}
+{% load static %}
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+    <main class="blog-read">
+        <article class="post">
+            <div>
+              <div class="absolute-bg">
+                <img src="{{blog_obj.image.url}}" alt="blog-image">
+              </div>
+            </div>
+            <div class="post__container">
+              <span class="post__category">{{blog_obj.user.username}}</span>
+          
+              <div class="post__content">
+                <header>
+                  <time class="post__time">{{blog_obj.created_at}}</time>
+                  <h2 class="post__header"><span>{{blog_obj.title}}</span></h2>
+                </header>
+          
+                <p class="post__text">{{blog_obj.content|safe}}</p>
+              </div>
+              <div class="post__link">
+               <!---<a href="#"></a>-->
+              </div>
+            </div>
+          </article>
+    </main>
+
+    
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+{% endblock %}
+    

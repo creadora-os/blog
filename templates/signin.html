@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block start %}
+{% load static %}
+
+
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+    <main>
+        <section class="Sign">
+            <div class="hero">
+             <div class="form-box">
+                <div class="button-box">
+                    <div id="btnco"></div>
+                    <button type="button" class="toggle-btn" onclick="signin()">Sign In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                    <div id="signin" class="input-group">
+                        <input type="text" class="field" name="loginUsername" id="loginUsername" placeholder="username"required>
+                        <input type="text" class="field" name="loginPassword" id="loginPassword" placeholder="password"required>
+                        <input type="checkbox" class="check-box"><span class="ab">Remember Password</span>
+                        <button type="button" class="Submit-Btn" onclick="login()">Sign In</button>
+                    </div>
+                    <div id="register" class="input-group">
+                        <input type="text" class="field" name="signUsername" id="signUsername" placeholder="username"required>
+                        <input type="text" class="field"  name="signEmail" id="signEmail" placeholder="email"required>
+                        <input type="text" class="field"  name="signPassword" id="signPassword" placeholder="password"required>
+                        <input type="checkbox" class="check-box"><span class="ab">Remember Password</span>
+                        <button type="button" class="Submit-Btn" onclick="signup()" >Create Account</button>
+                    </div>
+                </div>
+             </div>
+            </div>
+            <!--<script type="text/javascript" src="{% static '.js/log.js' %}"></script>-->
+            <script>
+                var x = document.getElementById("signin");
+                var y = document.getElementById("register");
+                var z = document.getElementById("btnco");
+
+                function register(){
+                   x.style.left = "-400px";
+                   y.style.left = "-20px";
+                   z.style.left = "110px";
+                }
+                function signin(){
+                   x.style.left = "-20px";
+                   y.style.left = "450px";
+                   z.style.left = "0";
+                }
+            </script>
+        
+        </section>
+        
+        
+    </main>
+
+    
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+    {% endblock %}
+    

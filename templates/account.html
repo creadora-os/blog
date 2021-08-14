@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block start %}
+{% load static %}
+
+    <main class="account">
+      <header>
+        <div class="container">
+            <div class="profile">
+                <!--<div class="profile-image">
+                    <img src="{{profile.image.url}}" alt="user">
+                </div>-->
+                <div class="profile-user-settings">
+                    <h2 class="profile-user-name">{{blog.user}}</h2>
+                    <button class="btn1 profile-edit-btn"><a href="{% url 'edit_profile' %}" >Edit Profile</a></button>
+                    <!--<button class="btn1 profile-settings-btn" aria-label="Profile Setting"><i class="fas fa-cog"></i></button>--->
+                </div>
+                <div class="profile-stats">
+                    <ul>
+                         
+                        <!--<li><span class="profile-stat-count">164</span>Posts</li>-->
+                        <li><button class="btn2 profile-create-btn"><a href="{% url 'add_blog' %}">create blog</a></button></li>
+                        <li><button class="btn2"><a href="{% url 'logout_view' %}">Log out</a></button></li>
+                    </ul>
+                </div>
+                <!--<div class="profile-bio">
+                    <p><span class="profile-real-name">Memoir</span>{{profile_objs.bio}}</p>
+                </div>-->
+            </div>
+            <!--end of profile section-->
+        </div>
+        <!--end of container-->
+      </header>
+            
+        <div class="container">
+            <div class="gallery">
+                {% for blog in blog_objs %}
+                <div class="gallery-item" tabindex="0">
+                    <img src="{{blog.image.url}}" alt="gallery1" class="gallery-image">
+                    <p>{{blog.title}}</p>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><a href="{% url 'blog_update' blog.slug %}"><i class="fas fa-pen"></i></a></li>
+                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><a href="{% url 'blog_delete' blog.id %}" ><i class="fas fa-trash"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+                <!--<div class="gallery-item" tabindex="0">
+                    <img src="{% static 'images/photo.jpg' %}" alt="gallery1" class="gallery-image">
+                    <p>gasdfjf jdfhs sdfhsf djfhuhk</p>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden></i>56</li>
+                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden></i>34</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <img src="{% static 'images/photo.jpg' %}" alt="gallery1" class="gallery-image">
+                    <p>gasdfjf jdfhs sdfhsf djfhuhk</p>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden></i>56</li>
+                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden></i>34</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <img src="{% static 'images/photo3.jpg' %}" alt="gallery1" class="gallery-image">
+                    <p>gasdfjf jdfhs sdfhsf djfhuhk</p>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden></i>56</li>
+                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden></i>34</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <img src="{% static 'images/photo.jpg' %}" alt="gallery1" class="gallery-image">
+                    <p>gasdfjf jdfhs sdfhsf djfhuhk</p>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden></i>56</li>
+                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden></i>34</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <img src="{% static 'images/photo3.jpg' %}" alt="gallery1" class="gallery-image">
+                    <p>gasdfjf jdfhs sdfhsf djfhuhk</p>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden></i>56</li>
+                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden></i>34</li>
+                        </ul>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    
+        
+    </main>
+    {% endblock %}
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    
