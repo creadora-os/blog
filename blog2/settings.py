@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'froala_editor',
+    'rest_framework',
     'memoir',
-    'rest_framework'
+    
 ]
 
 MIDDLEWARE = [
